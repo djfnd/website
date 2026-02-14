@@ -3,29 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home</title>
+  <title>Dan Fowler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="container">
     <header>
-      <nav>
-        <a href="index.html" class="active">Home</a>
-      </nav>
-
+      <img src="https://substackcdn.com/image/fetch/w_600,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb168c5b-9068-40c3-b90c-fa4ceb3a2671_3280x2464.jpeg" alt="Dan Fowler" class="portrait" />
+      <div class="name">Dan Fowler</div>
     </header>
 
-    <main>
-    
-    <p>Hi there. I'm Dan.. I do deep, complex strategy, operations, and policy for companies on all sides of rights and IP-based industries.</p>
-    <br></br>
-    <p>You can take a look at <a href="https://danfowler.substack.com/" target="_blank" rel="noopener">my writing</a> to get an idea of the kinds of things that I find interesting. Or view our latest report on the state of music streaming economics, <a href="/assets/Combating-the-Emergence-of-a-Two-Tier-Industry-for-release.pdf" target="_blank">here.</a></p>
-    <br></br>
-    <p>If you want to chat about some work that you think I could help you with, then feel free to reach out at dan@ this site's url, or @dan_djfnd on telegram.</p>
-    <br></br>
-    <pr>Cheers!</pr>
-  </main>
+    <div class="intro">
+      <p>I work on deep strategy, operations, and policy for companies across rights and IP-based industries.</p>
+      <p>My focus is on innovation and disruption through new business models — rather than technology that sustains and enforces the status quo.</p>
+      <p>I've spent over a decade thinking about how the internet changes the economics of media. You can read more of my thinking at <a href="https://danfowler.substack.com/" target="_blank" rel="noopener">The Liminal Space</a>.</p>
+    </div>
 
+    <section class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <h2>Writing</h2>
+        <span class="section-toggle">+</span>
+      </div>
+      <div class="section-content">
+        <p class="section-intro">Essays exploring new economic frameworks for creative industries in the digital age.</p>
+        
+        <div class="work-item">
+          <div class="title"><a href="https://danfowler.substack.com/p/the-case-for-a-post-royalties-music" target="_blank" rel="noopener">The Case for a Post-Royalties Music Industry</a></div>
+          <div class="meta">January 2022 · On why royalties are incompatible with internet culture, and what might come next.</div>
+        </div>
 
+        <div class="work-item">
+          <div class="title"><a href="https://danfowler.substack.com/p/designing-f2p-music-with-a-focus" target="_blank" rel="noopener">Designing F2P Music with a Focus on "Fun"</a></div>
+          <div class="meta">October 2023 · A framework for understanding fan engagement beyond "superfans" and gamification.</div>
+        </div>
+
+        <div class="work-item">
+          <div class="title"><a href="https://danfowler.substack.com/p/the-agentic-web-and-the-future-business" target="_blank" rel="noopener">The Agentic Web and the Future Business of Music</a></div>
+          <div class="meta">May 2025 · How AI agents may reshape content economics and licensing models.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header" onclick="toggleSection(this)">
+        <h2>Policy</h2>
+        <span class="section-toggle">+</span>
+      </div>
+      <div class="section-content">
+        <p class="section-intro">Research and advocacy on market structure, cultural diversity, and the independent music sector.</p>
+
+        <div class="work-item">
+          <div class="title"><a href="/assets/Combating-the-Emergence-of-a-Two-Tier-Industry-for-release.pdf" target="_blank">Combating the Emergence of a Two-Tier Music Streaming Market</a></div>
+          <div class="meta">With Katherine Bassett · IMPALA, June 2025<br/>
+          <a href="https://impalamusic.org/new-report-highlights-emergence-of-a-two-tier-music-streaming-market-favouring-scale-over-diversity-and-flags-need-for-urgent-action/" target="_blank" rel="noopener">[Press release]</a></div>
+        </div>
+
+        <div class="work-item">
+          <div class="title"><a href="/assets/cultural-diversity-report.pdf" target="_blank">The Importance of a Culturally Diverse and Independent European Music Ecosystem</a></div>
+          <div class="meta">IMPALA, 2025<br/>
+          <a href="https://impalamusic.org/new-report-stresses-importance-of-culturally-diverse-and-independent-european-music-ecosystem-for-europes-economy-sovereignty-and-democracy-calls-for-investment-targeted-regulatory-oversig/" target="_blank" rel="noopener">[Press release]</a></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact">
+      Email: dan@danfowler.xyz · Telegram: <a href="https://t.me/dan_djfnd" target="_blank" rel="noopener">@dan_djfnd</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(header) {
+      const section = header.parentElement;
+      section.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
