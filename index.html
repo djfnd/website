@@ -7,12 +7,197 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-light: #666666;
+      --accent: #1a1a1a;
+      --border: #e5e5e5;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      background: var(--bg);
+      color: var(--text);
+      padding: 0;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      margin-top: 2rem;
+    }
+
+    .portrait {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      text-align: left;
+      margin-bottom: 2.5rem;
+    }
+
+    .intro p {
+      margin-bottom: 1rem;
+    }
+
+    .intro a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .intro a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    /* Expandable sections */
+    .section {
+      border-top: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .section-header:hover h2 {
+      color: var(--text-light);
+    }
+
+    .section-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+
+    .section-toggle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--text-light);
+      transition: transform 0.3s ease;
+    }
+
+    .section.open .section-toggle {
+      transform: rotate(45deg);
+    }
+
+    .section-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .section.open .section-content {
+      max-height: 1000px;
+      padding-bottom: 1.5rem;
+    }
+
+    .section-intro {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: var(--text-light);
+    }
+
+    .work-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .work-item .title {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .work-item .title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .work-item .title a:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .work-item .meta {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .work-item .meta a {
+      color: var(--text-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .work-item .meta a:hover {
+      color: var(--text);
+    }
+
+    .contact {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      margin-top: 0;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .contact a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .name {
+        font-size: 1.3rem;
+      }
+
+      .container {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <img src="https://substackcdn.com/image/fetch/w_600,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb168c5b-9068-40c3-b90c-fa4ceb3a2671_3280x2464.jpeg" alt="Dan Fowler" class="portrait" />
+      <img src="/assets/portrait.jpg" alt="Dan Fowler" class="portrait" />
       <div class="name">Dan Fowler</div>
     </header>
 
