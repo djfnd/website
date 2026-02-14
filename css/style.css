@@ -1,61 +1,184 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --text-light: #666666;
+  --accent: #1a1a1a;
+  --border: #e5e5e5;
+}
+
 body {
-  font-family: sans-serif;
-  line-height: 1.6;
-  background: #d9ead3;
-  color: #333;
-  padding: 0 1rem;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0;
 }
 
-/* Page container */
 .container {
-  max-width: 800px;
+  max-width: 680px;
   margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
-/* Header and nav */
 header {
-  background: #d9ead3;
-  color: #ff9900;
-  padding: 1rem 0;
-}
-
-nav {
-  display: flex;
-  gap: 2rem;
-  padding-left: 1rem;
-}
-
-nav a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-  padding-bottom: 0.2rem;
-}
-
-nav a.active {
-  border-bottom: 2px solid #333;
-}
-
-/* Main content */
-main {
-  background: #d9ead3;
-  padding: 2rem;
-  margin-top: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* Footer */
-footer {
   text-align: center;
-  padding: 1rem 0;
+  margin-bottom: 3rem;
   margin-top: 2rem;
-  color: #777;
+}
+
+.portrait {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.intro {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.intro p {
+  margin-bottom: 1rem;
+}
+
+.intro a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.intro a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Expandable sections */
+.section {
+  border-top: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.section-header:hover h2 {
+  color: var(--text-light);
+}
+
+.section-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+
+.section-toggle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-light);
+  transition: transform 0.3s ease;
+}
+
+.section.open .section-toggle {
+  transform: rotate(45deg);
+}
+
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.section.open .section-content {
+  max-height: 1000px;
+  padding-bottom: 1.5rem;
+}
+
+.section-intro {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: var(--text-light);
+}
+
+.work-item {
+  margin-bottom: 1.25rem;
+}
+
+.work-item .title {
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.work-item .title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.work-item .title a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.work-item .meta {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.work-item .meta a {
+  color: var(--text-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.work-item .meta a:hover {
+  color: var(--text);
+}
+
+.contact {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-top: 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.contact a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    padding: 2rem 1.5rem;
+  }
 }
